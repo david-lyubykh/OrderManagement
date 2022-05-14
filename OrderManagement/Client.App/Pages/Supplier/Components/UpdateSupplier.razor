@@ -1,0 +1,89 @@
+﻿@page "/supplier/update/{id:int}"
+@using Models
+@using Models.LocationDtos
+@using Models.SupplierDtos
+@inject IJSRuntime jsRuntime
+@inject NavigationManager navigationManager
+@inject IStateService stateService
+@inject ISupplierService supplierService
+
+<div class="row mt-2 mb-5">
+    <h3 class="card-title text-info mb-3 ml-3">@Title Supplier</h3>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <EditForm Model="SupplierModel" OnValidSubmit="HandleSupplierUpsert">
+                    <DataAnnotationsValidator/>                  
+                    <div class="form-group">
+                        <label>Name</label>
+                        <InputText class="form-control" @bind-Value="SupplierModel.Name"></InputText>
+                        <ValidationMessage For="()=>SupplierModel.Name"></ValidationMessage>
+                    </div>
+                     <div class="form-group">
+                        <label>Address Line 1</label>
+                        <InputText class="form-control" @bind-Value="SupplierModel.AddressLine1"></InputText>
+                         <ValidationMessage For="()=>SupplierModel.AddressLine1"></ValidationMessage>
+                    </div>
+                     <div class="form-group">
+                        <label>Address Line 2</label>
+                        <InputText class="form-control" @bind-Value="SupplierModel.AddressLine2"></InputText>
+                         <ValidationMessage For="()=>SupplierModel.AddressLine2"></ValidationMessage>
+                    </div>
+                     <div class="form-group">
+                        <label>City</label>
+                        <InputText class="form-control" @bind-Value="SupplierModel.City"></InputText>
+                         <ValidationMessage For="()=>SupplierModel.City"></ValidationMessage>
+                    </div>
+                     <div class="form-group">
+                        <label>Postal Code</label>
+                        <InputText class="form-control" @bind-Value="SupplierModel.PostalCode"></InputText>
+                         <ValidationMessage For="()=>SupplierModel.PostalCode"></ValidationMessage>
+                    </div>
+                     <div class="form-group">
+                        <label>State</label>
+                        <InputSelect class="form-control" @bind-Value="SupplierModel.StateId">
+                            @foreach (var state in states)
+                            {
+                                <option value="@state.Id">@state.Name</option>
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="()=>SupplierModel.StateId"></ValidationMessage>
+                    </div>
+                     <div class="form-group">
+                       <button class="btn btn-primary">@Title Supplier</button>
+                       <NavLink href="suppliers" class="btn btn-secondary">Back to List</NavLink>
+                    </div>
+                 </EditForm>
+             </div>
+         </div>
+      </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public int Id { get; set; } 
+    private List<StateDto> states { get; set; } = new List<StateDto>();
+    private UpdateSupplierDto SupplierModel{get;set;}=new UpdateSupplierDto();
+    public string Title { get; set; } = "Update";
+
+    protected async override Task OnInitializedAsync()
+    {
+        states = stateService.GetStates();
+        SupplierModel = await supplierService.GetSupplier(Id);
+    }
+
+    private async Task HandleSupplierUpsert()
+    {
+        try
+        {
+            var supplier=await supplierService.UpdateSupplier(SupplierModel);
+            navigationManager.NavigateTo("suppliers");
+        }
+        catch (Exception e)
+        {
+             await jsRuntime.ToastrError(e.Message);
+        }
+
+    }
+}

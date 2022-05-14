@@ -1,0 +1,17 @@
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\bin\Debug\net5.0\Services.deps.json
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\bin\Debug\net5.0\Services.dll
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\bin\Debug\net5.0\Services.pdb
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\bin\Debug\net5.0\DataAccess.dll
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\bin\Debug\net5.0\Models.dll
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\bin\Debug\net5.0\DataAccess.pdb
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\bin\Debug\net5.0\Models.pdb
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\obj\Debug\net5.0\Services.csproj.AssemblyReference.cache
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\obj\Debug\net5.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\obj\Debug\net5.0\Services.AssemblyInfoInputs.cache
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\obj\Debug\net5.0\Services.AssemblyInfo.cs
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\obj\Debug\net5.0\Services.csproj.CoreCompileInputs.cache
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\obj\Debug\net5.0\Services.csproj.CopyComplete
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\obj\Debug\net5.0\Services.dll
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\obj\Debug\net5.0\refint\Services.dll
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\obj\Debug\net5.0\Services.pdb
+E:\Upwork\OrderManagementSystem\OrderManagement\Services\obj\Debug\net5.0\ref\Services.dll
